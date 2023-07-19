@@ -13,7 +13,13 @@ export default defineConfig({
       sidebar: [
         {
           label: "Git introduction",
-          autogenerate: { directory: "git" },
+          items: [
+            { label: "Git basics", link: "git/git_basics" },
+            { label: "Merge conflicts", link: "git/merge_conflicts" },
+            { label: "Remotes", link: "git/remotes" },
+            { label: "Setup", link: "git/setup" },
+            { label: "References", link: "git/references" },
+          ],
         },
       ],
     }),

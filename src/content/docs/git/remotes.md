@@ -23,7 +23,9 @@ For instance, let's say we have a local repository with a master branch and a re
 
  <img src="/images/fetch1.png" width="75%">
 
-We can only _see_ the modification comming from the remote server, not the actual changes on the files. If we inspect the available branches with `git branch -a`, we'll see the following results
+Git fetch allows our local repo to get updated with the latest changes comming from the remote. However, this operation is considered safe, as it does not modify our files, it only **fetches** the lastest changes, allowing you to see what happened on the remote. It's up to you if you want to merge the changes in your local repo.
+
+If we inspect the available branches with `git branch -a`, we'll see the following results
 
 ```
 *master
@@ -31,7 +33,7 @@ remotes/origin/develop
 remotes/origin/master
 ```
 
-The first one is our local **master** branch and the two other are from the remote server.
+The first one is our local **master** branch and the two other are from the remote server and were obtained via `git fetch`.
 
 If we want the **origin/develop** branch to show up locally (getting the modifications in our files), we can use the checkout command to create a new branch called **develop** from the remote branch:
 
@@ -51,7 +53,7 @@ and someone keep pushing new changes to the develop branch on the server:
 
 <img src="/images/fetch4.png" width="60%">
 
-Fetching periodically and merging the **origin/develop** branch into your **feature** branch allows your code to stay relevent and prevent future merge conflict when you will want to merge your feature into the develop branch, as intented from the start.
+Fetching periodically and merging the **origin/develop** branch into your **feature** branch allows your code to stay relevent and prevent future merge conflicts when you will want to merge your feature into the develop branch, as intented from the start.
 
 ```console
 git fetch
