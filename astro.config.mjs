@@ -19,6 +19,7 @@ export default defineConfig({
             { label: "Remotes", link: "git/remotes" },
             { label: "Setup", link: "git/setup" },
             { label: "References", link: "git/references" },
+            { label: "Git commands", link: "git/commands" },
           ],
         },
       ],
