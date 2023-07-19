@@ -4,6 +4,8 @@ import remarkMermaid from "astro-diagram/remark-mermaid";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://LouisCassany.github.io",
+  base: "/wiki",
   integrations: [
     starlight({
       title: "Git ressources",
@@ -25,7 +27,6 @@ export default defineConfig({
       ],
     }),
   ],
-
   // Process images with sharp: https://docs.astro.build/en/guides/assets/#using-sharp
   image: { service: { entrypoint: "astro/assets/services/sharp" } },
 });
