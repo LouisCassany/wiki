@@ -71,8 +71,10 @@ For example, starting frome the following repo:
 You can create a new branch from your position (where your **HEAD** is) and switch to it with the following command:
 
 ```console
-git checkout -b feature
+git switch -c feature
 ```
+
+The **c** option tells Git to create the branch if it doesn't already exists locally.
 
  <img src="/images/branch1.png" width="50%">
 
@@ -89,10 +91,10 @@ git commit -am "Added nice stuff"
 
  <img src="/images/branch2.png" width="80%">
 
-Now, let's say you want to go back to a previous version of the code that corresponds to the master branch. You can checkout to it:
+Now, let's say you want to go back to a previous version of the code that corresponds to the master branch. You can switch to it:
 
 ```console
-git checkout master
+git switch master
 ```
 
 If you do some work and then commit it, the repo will look like this:
@@ -108,18 +110,18 @@ Now, let's say you are done working on your feature and you want to merge the co
 You need first to make sure that you are on the master branch, by using the **checkout** command and then use the **merge** command to merge **feature** into **master**:
 
 ```console
-git checkout master
+git switch master
 git merge feature
 ```
 
  <img src="/images/branch4.png" width="90%">
 
-Don't forget to eventually delete the branch **feature** as it's not longer needed with the command:
+The last commit **_e4fef_** is special in the sense that it have two ancestors that represent the merging of two branches and may require you to resolve a merge conflict. If that's the case, Git will tell you that you have a conflict. Once you solved the conflict, you need to commit your changes to finish the merging process.
+
+Don't forget to eventually delete the local branch **feature** as it's not longer needed with the command:
 
 ```console
 git branch -d feature
 ```
 
  <img src="/images/branch5.png" width="90%">
-
-The last commit **_e4fef_** is special in the sense that it have two ancestors that represent the merging of two branches and may require you to resolve a merge conflict.

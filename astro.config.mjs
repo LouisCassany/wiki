@@ -8,17 +8,17 @@ export default defineConfig({
   base: "/wiki",
   integrations: [
     starlight({
-      title: "Git ressources",
+      title: "Beyond the Sea",
       social: {
         github: "https://github.com/withastro/starlight",
       },
       sidebar: [
         {
-          label: "Git introduction",
+          label: "Git",
           items: [
             { label: "Git basics", link: "git/git_basics" },
             { label: "Merge conflicts", link: "git/merge_conflicts" },
-            { label: "Remotes", link: "git/remotes" },
+            { label: "Working with remotes", link: "git/remotes" },
             { label: "Setup", link: "git/setup" },
             { label: "References", link: "git/references" },
             { label: "Git commands", link: "git/commands" },

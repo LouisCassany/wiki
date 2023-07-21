@@ -1,5 +1,5 @@
 ---
-title: Working with remote repositories
+title: Working with remotes
 description: Strategies and best practices for working/collaborating with remote repositories
 ---
 
@@ -13,7 +13,7 @@ git clone <REMOTE_REPO_URL> <FOLDER_NAME>
 
 The **FOLDER_NAME** option is optional. By default, the remote server (where you clonned from) is named **origin**.
 
-## Fetch/checkout
+## Fetch/Switch
 
 The git fetch command is used to retrieve the latest changes from a remote repository without automatically merging them with your local branch. It updates your local copy of the remote repository, allowing you to see the latest commits and branches but it **does not modify your working directory or current branch**.
 
@@ -35,11 +35,13 @@ remotes/origin/master
 
 The first one is our local **master** branch and the two other are from the remote server and were obtained via `git fetch`.
 
-If we want the **origin/develop** branch to show up locally (getting the modifications in our files), we can use the checkout command to create a new branch called **develop** from the remote branch:
+If we want to get a local copy of the **origin/develop** branch we can use the **switch** command:
 
 ```console
-git checkout -b develop origin/develop
+git switch develop
 ```
+
+Note that when Git is unable to find a branch in your local repository, it will assume that you want to switch to the respective remote branch with the same name. It will then create a local branch with the same name. It will also set up a tracking relationship between your remote and local branch so that `git pull` and `git push` will work as intended.
 
  <img src="/images/fetch2.png" width="75%">
 
@@ -58,6 +60,63 @@ Fetching periodically and merging the **origin/develop** branch into your **feat
 ```console
 git fetch
 git merge remotes/origin/develop
+...
+git fetch
+git merge remotes/origin/develop
 ```
 
 <img src="/images/fetch5.png" width="80%">
+
+## Push
+
+You can use the command `git push` to send a branch to the remote server or to update a branch on the remote repository.
+
+You may encounter the following message if your `git push` command fails:
+
+```
+> git push
+fatal: The current branch feature has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin feature
+```
+
+It means that either the **feature** branch doesn't exist on the remote or that the our local **feature** has no upstream branch (Git doesn't know where to push our branch).
+
+You can resolve it by telling Git explicity what you want to do:
+
+```console
+git push -u origin feature
+```
+
+Note that you only have to do it once, subsequent `git push` should work as itended.
+
+## Push
+
+You can use the command `git push` to send a branch to the remote server or to update a branch on the remote repository.
+
+You may encounter the following message if your `git push` command fails:
+
+```
+> git push
+fatal: The current branch feature has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin feature
+```
+
+It means that either the **feature** branch doesn't exist on the remote or that the our local **feature** has no upstream branch (Git doesn't know where to push our branch).
+
+You can resolve it by telling Git explicity what you want to do:
+
+```console
+git push -u origin feature
+```
+
+Note that you only have to do it once, subsequent `git push` should work as itended.
+
+## Pull
+
+`git pull` incorporates changes from a remote repository into the **current branch** (it won't update all the branches, only the current branch you're on). If the current branch is behind the remote, then by default it will fast-forward the current branch to match the remote. If the current branch and the remote have diverged, you may have to resolve a merge conflict.
+
+More precisely, git pull runs git fetch with the given parameters and then will call git merge to reconcile diverging branches.
