@@ -28,12 +28,12 @@ git branch
 
 ```console
 # Create a new branch called "BRANCH_NAME" and switch to it.
-git checkout -b <BRANCH_NAME>
+git switch -c <BRANCH_NAME>
 ```
 
 ```console
 # Switch from one branch to another.
-git checkout <BRANCH_NAME>
+git switch <BRANCH_NAME>
 ```
 
 ```console
@@ -78,4 +78,9 @@ git merge <BRANCH_NAME>
 ```console
 # View all the merge conflicts.
 git diff
+```
+
+```console
+# View all the differences between 2 branches.
+git diff <BRANCH_A> <BRANCH_B>
 ```
