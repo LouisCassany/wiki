@@ -46,7 +46,7 @@ A commit points towards its ancestor, since each commit is basically a set of mo
 
 **HEAD** is just a pointer that tells you where you are. For example, when you have the following repo with 2 commits:
 
- <img src="/images/commit1.png" width="30%">
+ <img src="/wiki/images/commit1.png" width="30%">
 
 You can create new commits using the command:
 

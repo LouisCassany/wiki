@@ -1,5 +1,5 @@
 ---
-title: commands
+title: Git commands
 ---
 
 ## Initialise Git
