@@ -21,7 +21,7 @@ When you run git fetch, Git connects to the remote repository specified in your 
 
 For instance, let's say we have a local repository with a master branch and a remote repository with the same master branch as well as a develop branch that have been pushed by other collaborators. Calling `git fetch` will produce the result shown on the picture below:
 
- <img src="/images/fetch1.png" width="75%">
+ <img src="/wiki/images/fetch1.png" width="75%">
 
 Git fetch allows our local repo to get updated with the latest changes comming from the remote. However, this operation is considered safe, as it does not modify our files, it only **fetches** the lastest changes, allowing you to see what happened on the remote. It's up to you if you want to merge the changes in your local repo.
 
@@ -43,17 +43,17 @@ git switch develop
 
 Note that when Git is unable to find a branch in your local repository, it will assume that you want to switch to the respective remote branch with the same name. It will then create a local branch with the same name. It will also set up a tracking relationship between your remote and local branch so that `git pull` and `git push` will work as intended.
 
- <img src="/images/fetch2.png" width="75%">
+ <img src="/wiki/images/fetch2.png" width="75%">
 
 ## Fetching periodically
 
 If you are working on a feature branching out from the develop branch
 
- <img src="/images/fetch3.png" width="60%">
+ <img src="/wiki/images/fetch3.png" width="60%">
 
 and someone keep pushing new changes to the develop branch on the server:
 
-<img src="/images/fetch4.png" width="60%">
+<img src="/wiki/images/fetch4.png" width="60%">
 
 Fetching periodically and merging the **origin/develop** branch into your **feature** branch allows your code to stay relevent and prevent future merge conflicts when you will want to merge your feature into the develop branch, as intented from the start.
 
@@ -65,7 +65,7 @@ git fetch
 git merge remotes/origin/develop
 ```
 
-<img src="/images/fetch5.png" width="80%">
+<img src="/wiki/images/fetch5.png" width="80%">
 
 ## Push
 

@@ -56,7 +56,7 @@ git commit -am "<COMMIT_MESSAGE>"
 
 The **a** flag tells Git to commit all changed files at once and **m** is for the message.
 
- <img src="/images/commit2.png" width="50%">
+ <img src="/wiki/images/commit2.png" width="50%">
 
 ## Branches
 
@@ -66,7 +66,7 @@ Branches in Git allow you to work on different features, bug fixes, or experimen
 
 For example, starting frome the following repo:
 
- <img src="/images/commit2.png" width="50%">
+ <img src="/wiki/images/commit2.png" width="50%">
 
 You can create a new branch from your position (where your **HEAD** is) and switch to it with the following command:
 
@@ -76,7 +76,7 @@ git switch -c feature
 
 The **c** option tells Git to create the branch if it doesn't already exists locally.
 
- <img src="/images/branch1.png" width="50%">
+ <img src="/wiki/images/branch1.png" width="50%">
 
 For now, **master** and **feature** points towards the same commit **_6da84_**, e.g. the code in the **master** and the **feature** branch are identical.
 
@@ -89,7 +89,7 @@ git commit -am "Fixed bug 1"
 git commit -am "Added nice stuff"
 ```
 
- <img src="/images/branch2.png" width="80%">
+ <img src="/wiki/images/branch2.png" width="80%">
 
 Now, let's say you want to go back to a previous version of the code that corresponds to the master branch. You can switch to it:
 
@@ -103,7 +103,7 @@ If you do some work and then commit it, the repo will look like this:
 git commit -am "Some work on the master branch"
 ```
 
- <img src="/images/branch3.png" width="90%">
+ <img src="/wiki/images/branch3.png" width="90%">
 
 Now, let's say you are done working on your feature and you want to merge the code you wrote in the feature branch into your main code (the master branch).
 
@@ -114,7 +114,7 @@ git switch master
 git merge feature
 ```
 
- <img src="/images/branch4.png" width="90%">
+ <img src="/wiki/images/branch4.png" width="90%">
 
 The last commit **_e4fef_** is special in the sense that it have two ancestors that represent the merging of two branches and may require you to resolve a merge conflict. If that's the case, Git will tell you that you have a conflict. Once you solved the conflict, you need to commit your changes to finish the merging process.
 
@@ -124,4 +124,4 @@ Don't forget to eventually delete the local branch **feature** as it's not longe
 git branch -d feature
 ```
 
- <img src="/images/branch5.png" width="90%">
+ <img src="/wiki/images/branch5.png" width="90%">
